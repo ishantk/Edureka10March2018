@@ -3,7 +3,9 @@ package co.edureka.fileio;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 
 class IOOperations{
 	
@@ -76,10 +78,48 @@ class IOOperations{
 			} catch (Exception e) {
 				System.out.println("Some Exception: "+e);
 			}
-		
-		
-		
+
 	}
+		
+		void writeInFile(){
+			try {
+				
+				File file = new File("/Users/ishantkumar/Downloads","MyFirstProgram.java");
+				FileOutputStream fos = new FileOutputStream(file);
+				//FileOutputStream fos = new FileOutputStream(file,true);
+				
+				String code = "class MyFirstProgram{\n\tpublic static void main(String[] args){\n\tSystem.out.println();\n\t}\n}";
+				
+				fos.write(code.getBytes());
+				
+				fos.close();
+				
+				System.out.println("File Write Operation Finished...");
+				
+			} catch (Exception e) {
+				System.out.println("Some Exception: "+e);
+			}
+		}
+		
+		void writeInFileAgain(){
+			try {
+				
+				File file = new File("/Users/ishantkumar/Downloads","MyFirstProgram.java");
+				//FileWriter fw = new FileWriter(file);
+				FileWriter fw = new FileWriter(file,true); // append mode
+				
+				String code = "class Point{\n\tint x;\n\tint y;}";
+				
+				fw.write(code);
+				
+				fw.close();
+				
+				System.out.println("File Write Operation Finished...");
+				
+			} catch (Exception e) {
+				System.out.println("Some Exception: "+e);
+			}
+		}
 }
 
 public class FileIODemo {
@@ -88,8 +128,9 @@ public class FileIODemo {
 		
 		IOOperations io = new IOOperations();
 		//io.readFromFile();
-		io.readFromFileAgain();
-
+		//io.readFromFileAgain();
+		//io.writeInFile();
+		io.writeInFileAgain();
 	}
 
 }
