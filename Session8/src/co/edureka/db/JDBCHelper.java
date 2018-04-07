@@ -47,7 +47,9 @@ public class JDBCHelper {
 		}
 	}
 	
-	public void registerUser(User u){
+	public int registerUser(User u){
+		int i = 0;
+		
 		try {
 			
 			//3. Create a SQL Statement
@@ -65,13 +67,15 @@ public class JDBCHelper {
 			pStmt.setString(2, u.email);
 			pStmt.setString(3, u.password);
 			
-			int i = pStmt.executeUpdate();
+			i = pStmt.executeUpdate();
 			
 			System.out.println("SQL Statement Executed!! Row(s) inserted "+i);
 			
 		} catch (Exception e) {
 			System.out.println("Some Exception: "+e);
 		}
+		
+		return i;
 	}
 	
 	
