@@ -4,25 +4,20 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
-  
   <servlet>
-  	<servlet-name>MyServlet</servlet-name>
-  	<servlet-class>co.edureka.controller.LoginServlet</servlet-class>
+    <servlet-name>MyServlet</servlet-name>
+    <servlet-class>co.edureka.controller.LoginServlet</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  	<servlet-name>MyServlet</servlet-name>
-  	<url-pattern>/UserLogin</url-pattern>
+    <servlet-name>MyServlet</servlet-name>
+    <url-pattern>/UserLogin</url-pattern>
   </servlet-mapping>
-  
   <filter>
-  	<filter-name>MyFilter</filter-name>
-  	<filter-class>co.edureka.filters.LoginFilter</filter-class>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>co.edureka.filters.LoginFilter</filter-class>
   </filter>
-  
   <filter-mapping>
-  	<filter-name>MyFilter</filter-name>
-  	<url-pattern>/UserLogin</url-pattern>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/UserLogin</url-pattern>
   </filter-mapping>
-  
 </web-app>

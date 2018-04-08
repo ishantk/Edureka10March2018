@@ -60,5 +60,11 @@ public class Employee {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Employee [eid=" + eid + ", name=" + name + ", salary=" + salary + ", email=" + email + ", address="
+				+ address + "]";
+	}
+
 }

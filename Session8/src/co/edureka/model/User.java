@@ -3,6 +3,7 @@ package co.edureka.model;
 public class User {
 	
 	// Attributes
+	public Integer uid;
 	public String name;
 	public String password;
 	public String email;
@@ -11,10 +12,19 @@ public class User {
 		
 	}
 	
-	public User(String name, String password, String email) {
+	public User(Integer uid, String name, String password, String email) {
+		this.uid = uid;
 		this.name = name;
 		this.password = password;
 		this.email = email;
+	}
+	
+	public Integer getUid() {
+		return uid;
+	}
+
+	public void setUid(Integer uid) {
+		this.uid = uid;
 	}
 
 	public String getName() {
