@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+   <!-- <bean id="btn1" class="co.edureka.ui.Button" scope="prototype"> -->
+<!--    <bean id="btn1" class="co.edureka.ui.Button" init-method="myInit" destroy-method="myDestroy">
+       <property name="width" value="100"/>
+       <property name="height" value="50"/>
+       <property name="text" value="Cancel"/>
+       <property name="textColor" value="#FFFFFF"/>
+       <property name="backgroundColor" value="#FF0000"/>
+   </bean> -->
+   
+<!--    <bean id="fRef" class="co.edureka.ui.Father">
+       <property name="fname" value="John"/>
+       <property name="lname" value="Watson"/>
+       <property name="money" value="70000"/>
+   </bean>
+   
+   <bean id="sRef" class="co.edureka.ui.Son" parent="fRef">
+       <property name="fname" value="Jack"/>
+       <property name="vehicles" value="3"/>
+   </bean> -->
+   
+   <bean id="aRef" class="co.edureka.ui.Address">
+       <property name="adrsLine" value="Country Homes"/>
+       <property name="city" value="Bengaluru"/>
+       <property name="state" value="Karnataka"/>
+       <property name="zipCode" value="520001"/>
+   </bean>
+   
+   <bean id="aRef1" class="co.edureka.ui.Address">
+       <property name="adrsLine" value="Redwood Shores"/>
+       <property name="city" value="Bengaluru"/>
+       <property name="state" value="Karnataka"/>
+       <property name="zipCode" value="520001"/>
+   </bean>
+   
+   <bean id="pers" class="co.edureka.ui.Person">
+       <property name="name" value="John Watson"/>
+       <property name="email" value="john@exmaple.com"/>
+       <property name="age" value="30"/>
+       <constructor-arg  ref="aRef"/> <!-- Constructor Injection -->
+       <!-- <property name="adrs" ref="aRef"/> --> <!-- Setter Injection -->
+   </bean>
+   
+   <bean id="mgr" class="co.edureka.ui.Manager">
+       <property name="name" value="John"/>
+       <property name="email" value="john@example.com"/>
+       <property name="salary" value="70000"/>
+       <property name="certificates">  <!-- Collection Injection -->
+       	<list>
+       		<value>OCJP</value>
+       		<value>AWS</value>
+       		<value>CCNA</value>
+       	</list>
+       </property>
+        <property name="addresses">  <!-- Collection Injection -->
+       	<list>
+       		
+       	</list>
+       </property>
+   </bean>
+   
+   
+   <!-- <bean class="co.edureka.ui.PostProcessor"/> -->
+   
+   <!-- <bean id="btn2" class="co.edureka.ui.Button">
+       <property name="width" value="100"/>
+       <property name="height" value="50"/>
+       <property name="text" value="Login"/>
+       <property name="textColor" value="#000000"/>
+       <property name="backgroundColor" value="#FF0000"/>
+   </bean> -->
+
+</beans>
