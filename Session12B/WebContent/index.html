@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TABLE OF A NUMBER</title>
+
+<script type="text/javascript">
+
+	var request;
+
+	function sendInfo() {
+		var num = document.tableForm.txtNum.value;
+		var url = "prinTable.jsp?number="+num;
+
+		if(window.XMLHttpRequest){
+			request = new XMLHttpRequest(); // AJAX
+		}else{
+			request = new ActiveXObject("Microsoft.XMLHTTP");  // Microsoft IE5/6
+		}
+
+		try{
+			request.onreadystatechange = getInfo;
+			request.open("GET", url, true); // Creating an AJAX Request
+			request.send();				   // Sending an AJAX Request
+		}catch (e) {
+			alert("Unable to Process Requet at this time !!");
+		}
+	}
+
+	function getInfo() {
+		if(request.readyState==4){
+			var res = request.responseText;
+			document.getElementById("data").innerHTML = res;
+		}
+	}
+	
+</script>
+
+</head>
+<body>
+
+	<center>
+		<h3>Table of a Number:</h3>
+		<form name="tableForm">
+			<input type="text" name="txtNum" placeholder="eg: 5" onkeyup="sendInfo()"/>
+			<!-- <br/>
+			<input type="button" value="ShowTable" onclick="sendInfo()"/> -->
+		</form>
+	
+		<h3>Table: </h3>
+		<b>
+		<span id="data">
+		
+		</span>
+		</b>
+	</center>
+
+</body>
+</html>
