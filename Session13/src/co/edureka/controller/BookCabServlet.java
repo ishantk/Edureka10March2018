@@ -1,0 +1,31 @@
+package co.edureka.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import co.edureka.model.BookCab;
+
+
+@WebServlet({ "/BookCabServlet", "/BookCab" })
+public class BookCabServlet extends HttpServlet {
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		BookCab booking = new BookCab();
+		booking.source = request.getParameter("txtFrom");
+		booking.destinition = request.getParameter("txtTo");
+		
+		//.....
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.print("Cab Booked from "+booking.source+" to "+booking.destinition);
+	}
+
+}
